@@ -1,0 +1,24 @@
+{
+  "name": "iot-nodejs-sample",
+  "version": "1.0.0",
+  "description": "iot-nodejs-sample",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app/src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sclab-io/iot-nodejs-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sclab-io/iot-nodejs-sample/issues"
+  },
+  "homepage": "https://github.com/sclab-io/iot-nodejs-sample#readme",
+  "dependencies": {
+    "mqtt": "^4.3.7",
+    "pidusage": "^3.0.0"
+  }
+}
