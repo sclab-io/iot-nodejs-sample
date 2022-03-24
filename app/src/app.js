@@ -1,14 +1,9 @@
 const mqtt = require("mqtt");
 const pidusage = require("pidusage");
 
-const topic = "nodeJsTopic";
-const host = "mqtt://localhost";
-const intervalMS = 5000; //10000
-// const options = {
-//   clientId: "Client ID",
-//   username: "ID",
-//   password: "Password",
-// };
+const topic = "Topic";
+const host = "mqtt://localhost:1883";
+const intervalMS = 10000;
 
 const options = {
   clientId: "ClientID",
@@ -16,11 +11,9 @@ const options = {
   password: "Password",
 };
 
-//const client = mqtt.connect(host, options);
-const client = mqtt.connect("mqtt://test.mosquitto.org");
+const client = mqtt.connect(host, options);
 
 client.on("connect", function () {
-  console.log("connecting...");
   client.subscribe(topic, function (err) {
     if (!err) {
       console.log("Connected");
@@ -44,6 +37,5 @@ client.on("connect", function () {
 
 client.on("message", function (topic, message) {
   // message is Buffer
-  console.log(topic);
   console.log(JSON.parse(message.toString()));
 });
