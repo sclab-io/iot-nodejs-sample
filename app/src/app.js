@@ -25,7 +25,6 @@ client.on("connect", function () {
           memory: Math.round(stats.memory / 1024 / 1024),
           date: new Date().toISOString(),
         }
-        console.log("Publishing message: ", msg);
         client.publish(topic, Buffer.from(JSON.stringify(msg), "utf-8"));
       }, intervalMS);
 
@@ -37,5 +36,5 @@ client.on("connect", function () {
 
 client.on("message", function (topic, message) {
   // message is Buffer
-  console.log(JSON.parse(message.toString()));
+  console.log(`Received message[${topic}] : `, JSON.parse(message.toString()));
 });
